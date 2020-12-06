@@ -20,17 +20,16 @@ public class ManageCatalogController {
     MainService mSr;
     @Autowired
     UserService uSR;
-    @Autowired
-    Logger serverLogger;
+
     @PostMapping("/addCtlg")
     public ResponseEntity addCatalog(@RequestParam String name,@RequestParam boolean access){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         try {
             mSr.addCatalog(uSR.getUserByLogin(user.getUsername()),name,access);
         } catch (IllegalArgumentException | IOException e) {
-            return new ResponceAction(400,e.toString()).respoce(serverLogger);
+            return new ResponceAction(400,e.toString()).respoce();
         }
-        return new ResponceAction(200,"success").respoce(serverLogger);
+        return new ResponceAction(200,"success").respoce();
     }
    /* @PostMapping("/delCtlg")
     public ResponseEntity deleteCatalog(@RequestParam String name,@RequestParam boolean access){

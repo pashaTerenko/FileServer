@@ -1,0 +1,40 @@
+2020-12-07 01:47:02.971  INFO 3404 --- [main] c.t.fileserver.FileserverApplication     : Starting FileserverApplication on DESKTOP-B5CPCE3 with PID 3404 (C:\Users\teren\Desktop\проекти\FileServer\target\classes started by teren in C:\Users\teren\Desktop\проекти\FileServer)
+2020-12-07 01:47:02.974  INFO 3404 --- [main] c.t.fileserver.FileserverApplication     : No active profile set, falling back to default profiles: default
+2020-12-07 01:47:03.655  INFO 3404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 01:47:03.728  INFO 3404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66ms. Found 3 JPA repository interfaces.
+2020-12-07 01:47:04.106  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-07 01:47:04.113  INFO 3404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 01:47:04.113  INFO 3404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 01:47:04.288  INFO 3404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 01:47:04.289  INFO 3404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1264 ms
+2020-12-07 01:47:04.386  INFO 3404 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 01:47:04.391  INFO 3404 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-12-07 01:47:04.418  INFO 3404 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-07 01:47:04.445  INFO 3404 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-07 01:47:04.463  WARN 3404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 01:47:04.519  INFO 3404 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-07 01:47:04.565  INFO 3404 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75b38c36, org.springframework.security.web.context.SecurityContextPersistenceFilter@1200458e, org.springframework.security.web.header.HeaderWriterFilter@7f323b3a, org.springframework.security.web.authentication.logout.LogoutFilter@f25f48a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4978777f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cc30dee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@750a04ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47248a48, org.springframework.security.web.session.SessionManagementFilter@47148f3f, org.springframework.security.web.access.ExceptionTranslationFilter@4640195a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19bedeb8]
+2020-12-07 01:47:04.579  INFO 3404 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-07 01:47:04.667  INFO 3404 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-07 01:47:04.684  INFO 3404 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-07 01:47:04.822  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-07 01:47:04.824  INFO 3404 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-07 01:47:05.397  INFO 3404 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-07 01:47:05.401  INFO 3404 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 01:47:05.627  INFO 3404 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-07 01:47:05.635  INFO 3404 --- [main] c.t.fileserver.FileserverApplication     : Started FileserverApplication in 2.918 seconds (JVM running for 3.442)
+2020-12-07 01:47:16.932  INFO 3404 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-07 01:47:16.932  INFO 3404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-07 01:47:16.936  INFO 3404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-12-07 01:47:57.195  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : path: nullAction{time=Mon Dec 07 01:47:57 EET 2020, exeptionMessage='null'}
+2020-12-07 01:47:57.206  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : Action{time=Mon Dec 07 01:47:57 EET 2020, exeptionMessage='null'}
+2020-12-07 01:47:57.207  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:47:57.207  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:48:38.696  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/Gmail.zip', time=Mon Dec 07 01:48:37 EET 2020, exeptionMessage='null'}
+2020-12-07 01:48:38.696  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : path: nullAction{time=Mon Dec 07 01:48:38 EET 2020, exeptionMessage='null'}
+2020-12-07 01:48:38.702  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : Action{time=Mon Dec 07 01:48:38 EET 2020, exeptionMessage='null'}
+2020-12-07 01:48:38.702  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : path: 346ac3c0-62ce-4533-b19a-127f9d80f691Action{time=Mon Dec 07 01:48:38 EET 2020, exeptionMessage='null'}
+2020-12-07 01:48:38.705  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : Action{time=Mon Dec 07 01:48:38 EET 2020, exeptionMessage='null'}
+2020-12-07 01:48:38.705  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:48:38.705  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:50:51.951  INFO 3404 --- [http-nio-8081-exec-10] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/Gmail.zip', time=Mon Dec 07 01:50:51 EET 2020, exeptionMessage='com.dropbox.core.v2.files.DownloadErrorException: Exception in 2/files/download: {".tag":"path","path":"not_found"}'}

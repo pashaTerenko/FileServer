@@ -26,8 +26,7 @@ public class ManageFileController {
     UserService uSr;
     @Autowired
     FileService fSr;
-    @Autowired
-    Logger serverLogger;
+
     @PostMapping("/addFile/{catalogID}")
     public ResponseEntity addFile(@RequestParam("file") MultipartFile file, @PathVariable(value = "catalogID") String toCatalogId) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -38,10 +37,10 @@ public class ManageFileController {
             newFile.setName(file.getOriginalFilename());
             newFile.setData(file.getBytes());
             fSr.addFileToCatalog(us, mSr.getCatalogByUuid(us, toCatalogId), newFile);
-            return new ResponceAction(200,"success").respoce(serverLogger);
+            return new ResponceAction(200,"success").respoce();
         } catch (IOException | DbxException | AccessDeniedException e) {
 
-            return new ResponceAction(400,e.toString()).respoce(serverLogger);
+            return new ResponceAction(400,e.toString()).respoce();
         }
 
     }
@@ -63,10 +62,10 @@ public class ManageFileController {
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
             fSr.deleteFile(us, fSr.getFileByUuid(us, fileId));
-            return new ResponceAction(200,"success").respoce(serverLogger);
+            return new ResponceAction(200,"success").respoce();
 
         } catch (DbxException | AccessDeniedException|IOException e) {
-            return new ResponceAction(200,e.toString()).respoce(serverLogger);
+            return new ResponceAction(200,e.toString()).respoce();
 
         }
     }

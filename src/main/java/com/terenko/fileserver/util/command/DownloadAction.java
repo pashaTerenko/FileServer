@@ -14,10 +14,9 @@ import java.util.logging.Logger;
 
 @Data
 
-public class DownloadAction  implements DropboxCommand {
+public class DownloadAction extends Action implements DropboxCommand {
     private String filePath;
-    private Date time;
-    private String exeptionMessage;
+
     private byte[] result;
 
     public DownloadAction(String filePath) {
@@ -25,7 +24,7 @@ public class DownloadAction  implements DropboxCommand {
     }
 
     @Override
-    public void execute(DropBoxService dropBoxService ,Logger serverLogger) throws IOException, DbxException {
+    public void execute(DropBoxService dropBoxService ) throws IOException, DbxException {
         this.filePath = filePath;
         time = new Date();
         time.getTime();
@@ -36,7 +35,7 @@ public class DownloadAction  implements DropboxCommand {
             exeptionMessage = e.toString();
             throw e;
         } finally {
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
         }
     }
 

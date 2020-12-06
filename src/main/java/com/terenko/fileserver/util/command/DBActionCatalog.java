@@ -10,20 +10,17 @@ import com.terenko.fileserver.model.CustomUser;
 import com.terenko.fileserver.model.ModelDB;
 import com.terenko.fileserver.util.Action;
 import com.terenko.fileserver.util.DBCommand;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.logging.Logger;
+
 @Component
 public class DBActionCatalog extends Action implements DBCommand {
 
-    private String message;
-    private Date time;
-    private String exeptionMessage;
+
 
     public DBActionCatalog() {
     }
@@ -31,11 +28,11 @@ public class DBActionCatalog extends Action implements DBCommand {
 
 
     @Override
-    public <T extends ModelDB> void execute(CustomUser us, T t, JpaRepository userRepository, JpaRepository catalogRepository, Logger serverLogger) throws IOException {
+    public <T extends ModelDB> void execute(CustomUser us, T t, JpaRepository userRepository, JpaRepository catalogRepository) throws IOException {
         try {
             time = new Date();
             time.getTime();
-            serverLogger.info("user: " + t.toString() + "Path" + this.toString());
+            serverLogger.info("path: "+t.getUuid()+this.toString());
             userRepository.save(us);
             catalogRepository.save((Catalog) t);
 
@@ -43,7 +40,7 @@ public class DBActionCatalog extends Action implements DBCommand {
             exeptionMessage = e.toString();
             throw e;
         } finally {
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
         }
     }
 }

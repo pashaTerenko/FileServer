@@ -7,6 +7,6 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public interface DropboxCommand {
-     void execute(DropBoxService dropBoxService ,Logger serverLogger) throws IOException, DbxException;
+     void execute(DropBoxService dropBoxService ) throws IOException, DbxException;
      byte[]  getResult();
 }

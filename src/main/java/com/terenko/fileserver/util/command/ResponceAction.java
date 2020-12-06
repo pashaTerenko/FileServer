@@ -16,11 +16,10 @@ import java.util.logging.Logger;
 
 @Data
 
-public class ResponceAction  implements ResponceCommand {
+public class ResponceAction extends Action implements ResponceCommand {
     private int statusCode;
     private String message;
-    private Date time;
-    private String exeptionMessage;
+
 
     public ResponceAction(int statusCode, String message) {
         this.statusCode = statusCode;
@@ -33,17 +32,17 @@ public class ResponceAction  implements ResponceCommand {
 
 
     @Override
-    public ResponseEntity respoce(Logger serverLogger) {
+    public ResponseEntity respoce() {
         try {
             time = new Date();
             time.getTime();
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
             return new ResponseEntity(this, HttpStatus.valueOf(statusCode));
         } catch (Exception e) {
             exeptionMessage = e.toString();
             throw e;
         } finally {
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
         }
         }
 

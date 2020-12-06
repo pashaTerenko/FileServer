@@ -11,6 +11,7 @@ import com.terenko.fileserver.model.Catalog;
 import com.terenko.fileserver.model.CustomUser;
 import com.terenko.fileserver.model.File;
 import com.terenko.fileserver.util.command.*;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
@@ -31,8 +32,7 @@ public class FileService implements FileServiceInterface {
     DropBoxService dropBoxService;
     @Autowired
     SecurityService securityService;
-@Autowired
-    Logger serverLogger;
+
     @Override
 
     public void addFileToCatalog(CustomUser us, Catalog catalog, FileDTO filedto) throws AccessDeniedException, DbxException, IOException {
@@ -43,10 +43,10 @@ public class FileService implements FileServiceInterface {
             File file = new File(filedto.getName());
             catalog.addFile(file);
             DropboxCommand uploadAction=new UploadAction(file.getPath(),filedto.getData());
-            uploadAction.execute(dropBoxService,serverLogger);
+            uploadAction.execute(dropBoxService);
 
-            new DBActionFile().execute(us,file,userRepository,fileRepository,serverLogger);
-            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository,serverLogger);
+            new DBActionFile().execute(us,file,userRepository,fileRepository);
+            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository);
         } catch (AccessDeniedException | DbxException | IOException e) {
             throw e;
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class FileService implements FileServiceInterface {
                 throw new AccessDeniedException("user is havent access");
             FileDTO fileDTO = new FileDTO();
             DropboxCommand downloadAction=new DownloadAction(file.getPath());
-            downloadAction.execute(dropBoxService,serverLogger);
+            downloadAction.execute(dropBoxService);
 
             fileDTO.setData( downloadAction.getResult());
             fileDTO.setName(file.getName());
@@ -89,13 +89,13 @@ public class FileService implements FileServiceInterface {
             file.setCatalog(null);
             try {
                 DropboxCommand deleteAction=new DeleteAction(file.getPath());
-                deleteAction.execute(dropBoxService,serverLogger);
+                deleteAction.execute(dropBoxService);
             } catch (DeleteErrorException e) {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            new DBActionFile().execute(us,file,userRepository,fileRepository,serverLogger);
-            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository,serverLogger);
+            new DBActionFile().execute(us,file,userRepository,fileRepository);
+            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository);
         } catch (DbxException | IOException e) {
             e.printStackTrace();
             throw e;

@@ -19,18 +19,14 @@ import java.util.logging.Logger;
 @Component
 public class DBActionFile  extends Action implements DBCommand {
 
-    private String message;
-    private Date time;
-    private String exeptionMessage;
-
 
 
     @Override
-    public <T extends ModelDB> void execute(CustomUser us, T t, JpaRepository userRepository, JpaRepository fileRepository, Logger serverLogger) throws IOException {
+    public <T extends ModelDB> void execute(CustomUser us, T t, JpaRepository userRepository, JpaRepository fileRepository) throws IOException {
         try {
             time = new Date();
             time.getTime();
-            serverLogger.info("user: "+t.toString()+"Path"+this.toString());
+            serverLogger.info("path: "+t.getUuid()+this.toString());
             userRepository.save(us);
             fileRepository.save((File) t);
 
@@ -38,7 +34,8 @@ public class DBActionFile  extends Action implements DBCommand {
             exeptionMessage = e.toString();
             throw e;
         } finally {
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
         }
     }
+
 }

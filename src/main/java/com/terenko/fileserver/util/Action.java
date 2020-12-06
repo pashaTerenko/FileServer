@@ -1,13 +1,22 @@
 package com.terenko.fileserver.util;
 
-import com.terenko.fileserver.Repository.CatalogRepository;
-import com.terenko.fileserver.Repository.FileRepository;
-import com.terenko.fileserver.Repository.UserRepository;
-import com.terenko.fileserver.Sevice.DropBoxService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.util.logging.Logger;
-@Component
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+
+
 public  class Action {
+    protected static final Logger serverLogger = LoggerFactory.getLogger(Action.class.getClass().getName());
+    protected Date time;
+    protected String exeptionMessage;
+
+    @Override
+    public String toString() {
+        return "Action{" +
+                "time=" + time +
+                ", exeptionMessage='" + exeptionMessage + '\'' +
+                '}';
+    }
 }

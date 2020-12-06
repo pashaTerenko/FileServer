@@ -27,8 +27,6 @@ public class MainService implements ServiceInterface {
     CatalogRepository catalogRepository;
     @Autowired
     SecurityService securityService;
-    @Autowired
-    Logger serverLogger;
     @Override
     public void addCatalog(CustomUser us, String catalogName,boolean access) throws IllegalArgumentException, IOException {
 
@@ -36,7 +34,7 @@ public class MainService implements ServiceInterface {
 
             Catalog newCatalog= new Catalog(catalogName,access,us);
             us.addCatalog((Catalog)newCatalog);
-           new DBActionCatalog().execute(us,newCatalog,userRepository,catalogRepository,serverLogger);
+           new DBActionCatalog().execute(us,newCatalog,userRepository,catalogRepository);
 
 
         } catch (IllegalArgumentException | IOException e) {
@@ -57,7 +55,7 @@ public class MainService implements ServiceInterface {
                   e.printStackTrace();
                 }
             });
-        new DBActionCatalog().execute(us,toDel,userRepository,catalogRepository,serverLogger);
+        new DBActionCatalog().execute(us,toDel,userRepository,catalogRepository);
 
 
     }

@@ -14,5 +14,5 @@ import java.util.logging.Logger;
 import java.io.IOException;
 
 public interface DBCommand {
-    < T extends ModelDB> void execute(CustomUser us, T t, JpaRepository user,JpaRepository object,Logger serverLogger) throws IOException;
+    < T extends ModelDB> void execute(CustomUser us, T t, JpaRepository user,JpaRepository object) throws IOException;
 }

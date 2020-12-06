@@ -16,16 +16,14 @@ import java.util.logging.Logger;
 
 @Data
 
-public class DeleteAction  implements DropboxCommand {
+public class DeleteAction  extends Action implements DropboxCommand {
     private String filePath;
-    private Date time;
-    private String exeptionMessage;
 
     public DeleteAction(String filePath) {
         this.filePath = filePath;
     }
   @Override
-    public void execute(DropBoxService dropBoxService ,Logger serverLogger) throws IOException, DbxException {
+    public void execute(DropBoxService dropBoxService ) throws IOException, DbxException {
 
         time = new Date();
         time.getTime();
@@ -36,7 +34,7 @@ public class DeleteAction  implements DropboxCommand {
             exeptionMessage = e.toString();
             throw e;
         } finally {
-            serverLogger.info(this::toString);
+            serverLogger.info(this.toString());
         }
     }
 
@@ -44,5 +42,12 @@ public class DeleteAction  implements DropboxCommand {
     public byte[] getResult() {
       return null;
     }
-
+    @Override
+    public String toString() {
+        return "DownloadAction{" +
+                "filePath='" + filePath + '\'' +
+                ", time=" + time +
+                ", exeptionMessage='" + exeptionMessage + '\'' +
+                '}';
+    }
 }
