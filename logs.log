@@ -1,0 +1,8 @@
+дек. 07, 2020 1:10:50 AM com.terenko.fileserver.util.command.DBActionCatalog execute
+INFO: user: catalogpafdva null f8f9ad16-32b7-4cf6-9e21-0b9de9482197Pathcom.terenko.fileserver.util.command.DBActionCatalog@6ee70513
+дек. 07, 2020 1:10:51 AM com.terenko.fileserver.util.command.DBActionCatalog execute
+INFO: com.terenko.fileserver.util.command.DBActionCatalog@6ee70513
+дек. 07, 2020 1:10:51 AM com.terenko.fileserver.util.command.ResponceAction respoce
+INFO: ResponceAction(statusCode=200, message=success, time=Mon Dec 07 01:10:51 EET 2020, exeptionMessage=null)
+дек. 07, 2020 1:10:51 AM com.terenko.fileserver.util.command.ResponceAction respoce
+INFO: ResponceAction(statusCode=200, message=success, time=Mon Dec 07 01:10:51 EET 2020, exeptionMessage=null)
