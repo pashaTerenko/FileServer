@@ -14,7 +14,7 @@ import java.util.UUID;
 @Entity
 @Data
 
-public class CustomUser {
+public class CustomUser implements ModelDB {
 
     @Id
     @GeneratedValue(generator = "uuid")

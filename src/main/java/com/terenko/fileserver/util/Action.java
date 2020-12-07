@@ -8,6 +8,7 @@ import java.util.Date;
 
 
 public  class Action {
+
     protected static final Logger serverLogger = LoggerFactory.getLogger(Action.class.getClass().getName());
     protected Date time;
     protected String exeptionMessage;

@@ -7,7 +7,8 @@ import com.terenko.fileserver.model.Catalog;
 import com.terenko.fileserver.model.CustomUser;
 import com.terenko.fileserver.util.AccessModificator;
 
-import com.terenko.fileserver.util.command.DBActionCatalog;
+import com.terenko.fileserver.util.command.DBAction;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,8 @@ public class MainService implements ServiceInterface {
 
             Catalog newCatalog= new Catalog(catalogName,access,us);
             us.addCatalog((Catalog)newCatalog);
-           new DBActionCatalog().execute(us,newCatalog,userRepository,catalogRepository);
+            new DBAction().setRepository(catalogRepository).execute(newCatalog);
+            new DBAction().setRepository(userRepository).execute(us);
 
 
         } catch (IllegalArgumentException | IOException e) {
@@ -55,7 +57,9 @@ public class MainService implements ServiceInterface {
                   e.printStackTrace();
                 }
             });
-        new DBActionCatalog().execute(us,toDel,userRepository,catalogRepository);
+        new DBAction().setRepository(catalogRepository).execute(toDel);
+        new DBAction().setRepository(userRepository).execute(us);
+
 
 
     }

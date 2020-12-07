@@ -38,3 +38,175 @@
 2020-12-07 01:48:38.705  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
 2020-12-07 01:48:38.705  INFO 3404 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
 2020-12-07 01:50:51.951  INFO 3404 --- [http-nio-8081-exec-10] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/Gmail.zip', time=Mon Dec 07 01:50:51 EET 2020, exeptionMessage='com.dropbox.core.v2.files.DownloadErrorException: Exception in 2/files/download: {".tag":"path","path":"not_found"}'}
+2020-12-07 01:53:29.754  INFO 3404 --- [http-nio-8081-exec-3] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/', time=Mon Dec 07 01:53:29 EET 2020, exeptionMessage='com.dropbox.core.v2.files.UploadErrorException: Exception in 2/files/upload: {".tag":"path","reason":{".tag":"malformed_path","malformed_path":null},"upload_session_id":"AAAAAAAAADUy7klfneFXPQ"}'}
+2020-12-07 01:53:29.754  INFO 3404 --- [http-nio-8081-exec-3] java.lang.Class                          : ResponceAction(statusCode=400, message=com.dropbox.core.v2.files.UploadErrorException: Exception in 2/files/upload: {".tag":"path","reason":{".tag":"malformed_path","malformed_path":null},"upload_session_id":"AAAAAAAAADUy7klfneFXPQ"})
+2020-12-07 01:53:29.754  INFO 3404 --- [http-nio-8081-exec-3] java.lang.Class                          : ResponceAction(statusCode=400, message=com.dropbox.core.v2.files.UploadErrorException: Exception in 2/files/upload: {".tag":"path","reason":{".tag":"malformed_path","malformed_path":null},"upload_session_id":"AAAAAAAAADUy7klfneFXPQ"})
+2020-12-07 01:53:29.765  INFO 3404 --- [http-nio-8081-exec-3] o.h.c.i.AbstractPersistentCollection     : HHH000496: Detaching an uninitialized collection with queued operations from a session: [com.terenko.fileserver.model.Catalog.fileList#346ac3c0-62ce-4533-b19a-127f9d80f691]
+2020-12-07 01:54:35.353  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/output (3).pdf', time=Mon Dec 07 01:54:33 EET 2020, exeptionMessage='null'}
+2020-12-07 01:54:35.353  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : path: nullAction{time=Mon Dec 07 01:54:35 EET 2020, exeptionMessage='null'}
+2020-12-07 01:54:35.357  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : Action{time=Mon Dec 07 01:54:35 EET 2020, exeptionMessage='null'}
+2020-12-07 01:54:35.357  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : path: 346ac3c0-62ce-4533-b19a-127f9d80f691Action{time=Mon Dec 07 01:54:35 EET 2020, exeptionMessage='null'}
+2020-12-07 01:54:35.358  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : Action{time=Mon Dec 07 01:54:35 EET 2020, exeptionMessage='null'}
+2020-12-07 01:54:35.358  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:54:35.358  INFO 3404 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 01:54:51.883  INFO 3404 --- [http-nio-8081-exec-6] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/output (3).pdf', time=Mon Dec 07 01:54:50 EET 2020, exeptionMessage='null'}
+2020-12-07 03:56:20.621  INFO 1644 --- [main] c.t.fileserver.FileserverApplication     : Starting FileserverApplication on DESKTOP-B5CPCE3 with PID 1644 (C:\Users\teren\Desktop\проекти\FileServer\target\classes started by teren in C:\Users\teren\Desktop\проекти\FileServer)
+2020-12-07 03:56:20.642  INFO 1644 --- [main] c.t.fileserver.FileserverApplication     : No active profile set, falling back to default profiles: default
+2020-12-07 03:56:22.032  INFO 1644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 03:56:22.111  INFO 1644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74ms. Found 3 JPA repository interfaces.
+2020-12-07 03:56:23.087  INFO 1644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-07 03:56:23.102  INFO 1644 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 03:56:23.102  INFO 1644 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 03:56:23.240  INFO 1644 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 03:56:23.240  INFO 1644 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2466 ms
+2020-12-07 03:56:23.405  INFO 1644 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 03:56:23.410  INFO 1644 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-12-07 03:56:23.459  INFO 1644 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-07 03:56:23.651  WARN 1644 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 03:56:23.651  INFO 1644 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-07 03:56:23.900  INFO 1644 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-07 03:56:23.901  INFO 1644 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31f295b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@35c4697c, org.springframework.security.web.header.HeaderWriterFilter@53d2d002, org.springframework.security.web.authentication.logout.LogoutFilter@214beff9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@c7f4457, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67d32a54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75cf0de5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a687d8d, org.springframework.security.web.session.SessionManagementFilter@202ae86f, org.springframework.security.web.access.ExceptionTranslationFilter@1c33e528, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@259b85d6]
+2020-12-07 03:56:24.017  INFO 1644 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-07 03:56:24.193  INFO 1644 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-07 03:56:24.267  INFO 1644 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-07 03:56:24.353  INFO 1644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-07 03:56:24.354  INFO 1644 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-07 03:56:25.439  INFO 1644 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-07 03:56:25.464  INFO 1644 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 03:56:25.771  INFO 1644 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-07 03:56:25.811  INFO 1644 --- [main] c.t.fileserver.FileserverApplication     : Started FileserverApplication in 5.974 seconds (JVM running for 7.787)
+2020-12-07 03:57:34.450  INFO 1644 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-07 03:57:34.450  INFO 1644 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-07 03:57:34.459  INFO 1644 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-12-07 03:57:37.791  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : DownloadAction{filePath='/37bdd009-ded6-43ab-8cae-3f417e8ba8b0/346ac3c0-62ce-4533-b19a-127f9d80f691/job_tasks_GCP.zip', time=Mon Dec 07 03:57:35 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:37.792  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Entity:com.terenko.fileserver.model.File with uuid:null perform command: Action{time=Mon Dec 07 03:57:37 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.007  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Action{time=Mon Dec 07 03:57:37 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.007  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Entity:com.terenko.fileserver.model.Catalog with uuid:346ac3c0-62ce-4533-b19a-127f9d80f691 perform command: Action{time=Mon Dec 07 03:57:38 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.012  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Action{time=Mon Dec 07 03:57:38 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.012  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Entity:com.terenko.fileserver.model.CustomUser with uuid:37bdd009-ded6-43ab-8cae-3f417e8ba8b0 perform command: Action{time=Mon Dec 07 03:57:38 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.015  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : Action{time=Mon Dec 07 03:57:38 EET 2020, exeptionMessage='null'}
+2020-12-07 03:57:38.016  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 03:57:38.042  INFO 1644 --- [http-nio-8081-exec-2] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 03:58:53.837  INFO 13424 --- [main] c.t.fileserver.FileserverApplication     : Starting FileserverApplication on DESKTOP-B5CPCE3 with PID 13424 (C:\Users\teren\Desktop\проекти\FileServer\target\classes started by teren in C:\Users\teren\Desktop\проекти\FileServer)
+2020-12-07 03:58:53.841  INFO 13424 --- [main] c.t.fileserver.FileserverApplication     : No active profile set, falling back to default profiles: default
+2020-12-07 03:58:54.438  INFO 13424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 03:58:54.504  INFO 13424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 3 JPA repository interfaces.
+2020-12-07 03:58:54.851  INFO 13424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-07 03:58:54.858  INFO 13424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 03:58:54.858  INFO 13424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 03:58:54.945  INFO 13424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 03:58:54.945  INFO 13424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1056 ms
+2020-12-07 03:58:55.038  INFO 13424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 03:58:55.044  INFO 13424 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-12-07 03:58:55.076  INFO 13424 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-07 03:58:55.107  INFO 13424 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-12-07 03:58:55.122  WARN 13424 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 03:58:55.187  INFO 13424 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-07 03:58:55.230  INFO 13424 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75b38c36, org.springframework.security.web.context.SecurityContextPersistenceFilter@1200458e, org.springframework.security.web.header.HeaderWriterFilter@7f323b3a, org.springframework.security.web.authentication.logout.LogoutFilter@f25f48a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4978777f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cc30dee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@750a04ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47248a48, org.springframework.security.web.session.SessionManagementFilter@47148f3f, org.springframework.security.web.access.ExceptionTranslationFilter@4640195a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19bedeb8]
+2020-12-07 03:58:55.249  INFO 13424 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-07 03:58:55.341  INFO 13424 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-07 03:58:55.356  INFO 13424 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-07 03:58:55.495  INFO 13424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-07 03:58:55.496  INFO 13424 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-07 03:58:55.823  INFO 13424 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-07 03:58:55.827  INFO 13424 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 03:58:56.062  INFO 13424 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-07 03:58:56.070  INFO 13424 --- [main] c.t.fileserver.FileserverApplication     : Started FileserverApplication in 2.499 seconds (JVM running for 3.082)
+2020-12-07 03:59:49.698  INFO 13424 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-07 03:59:49.698  INFO 13424 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-07 03:59:49.704  INFO 13424 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-12-07 03:59:55.169  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : Entity:com.terenko.fileserver.model.Catalog with uuid:null perform command: Action{time=Mon Dec 07 03:59:55 EET 2020, exeptionMessage='null'}
+2020-12-07 03:59:55.191  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : Action{time=Mon Dec 07 03:59:55 EET 2020, exeptionMessage='null'}
+2020-12-07 03:59:55.192  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : Entity:com.terenko.fileserver.model.CustomUser with uuid:37bdd009-ded6-43ab-8cae-3f417e8ba8b0 perform command: Action{time=Mon Dec 07 03:59:55 EET 2020, exeptionMessage='null'}
+2020-12-07 03:59:55.198  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : Action{time=Mon Dec 07 03:59:55 EET 2020, exeptionMessage='null'}
+2020-12-07 03:59:55.200  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 03:59:55.201  INFO 13424 --- [http-nio-8081-exec-3] java.lang.Class                          : ResponceAction(statusCode=200, message=success)
+2020-12-07 04:01:03.440 ERROR 13424 --- [http-nio-8081-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded; nested exception is java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (195936728) exceeds the configured maximum (10485760)] with root cause
+
+org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (195936728) exceeds the configured maximum (10485760)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:146) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:190) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:209) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:127) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:256) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:280) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2869) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.Request.getParts(Request.java:2771) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1098) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at javax.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:359) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at javax.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:359) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at javax.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:359) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at javax.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:359) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:95) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:88) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:87) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1178) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1012) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.38.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.4.RELEASE.jar:5.3.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.38.jar:9.0.38]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2020-12-07 04:01:26.272  INFO 13424 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=400, message=java.nio.file.AccessDeniedException: user is not creator)
+2020-12-07 04:01:26.272  INFO 13424 --- [http-nio-8081-exec-7] java.lang.Class                          : ResponceAction(statusCode=400, message=java.nio.file.AccessDeniedException: user is not creator)

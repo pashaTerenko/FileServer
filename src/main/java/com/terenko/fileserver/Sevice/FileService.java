@@ -45,8 +45,9 @@ public class FileService implements FileServiceInterface {
             DropboxCommand uploadAction=new UploadAction(file.getPath(),filedto.getData());
             uploadAction.execute(dropBoxService);
 
-            new DBActionFile().execute(us,file,userRepository,fileRepository);
-            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository);
+            new DBAction().setRepository(fileRepository).execute(file);
+            new DBAction().setRepository(catalogRepository).execute(catalog);
+            new DBAction().setRepository(userRepository).execute(us);
         } catch (AccessDeniedException | DbxException | IOException e) {
             throw e;
         } catch (Exception e) {
@@ -94,8 +95,9 @@ public class FileService implements FileServiceInterface {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            new DBActionFile().execute(us,file,userRepository,fileRepository);
-            new DBActionCatalog().execute(us,catalog,userRepository,catalogRepository);
+            new DBAction().setRepository(fileRepository).execute(file);
+            new DBAction().setRepository(catalogRepository).execute(catalog);
+            new DBAction().setRepository(userRepository).execute(us);
         } catch (DbxException | IOException e) {
             e.printStackTrace();
             throw e;
