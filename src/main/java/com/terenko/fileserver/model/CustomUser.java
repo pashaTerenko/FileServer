@@ -5,10 +5,8 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Entity
@@ -39,7 +37,7 @@ public class CustomUser implements ModelDB {
     }
 
     public static CustomUser fromDTO(AccountDTO accountDTO) {
-        return new CustomUser(accountDTO.getName(), accountDTO.getPictureUrl());
+        return new CustomUser(accountDTO.getLogin(), accountDTO.getPictureUrl());
     }
 
 

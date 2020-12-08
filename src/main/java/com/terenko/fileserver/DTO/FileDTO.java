@@ -4,7 +4,7 @@ import com.terenko.fileserver.model.File;
 import lombok.Data;
 
 @Data
-public class FileDTO {
+public class FileDTO implements DTO {
     String name;
     byte[] data;
     public FileDTO(){}

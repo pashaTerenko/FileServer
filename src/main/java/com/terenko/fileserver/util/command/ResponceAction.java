@@ -1,6 +1,7 @@
 package com.terenko.fileserver.util.command;
 
 import com.dropbox.core.DbxException;
+import com.terenko.fileserver.DTO.DTO;
 import com.terenko.fileserver.Sevice.DropBoxService;
 import com.terenko.fileserver.util.Action;
 import com.terenko.fileserver.util.ResponceCommand;
@@ -19,13 +20,18 @@ import java.util.logging.Logger;
 public class ResponceAction extends Action implements ResponceCommand {
     private int statusCode;
     private String message;
-
+    DTO dto;
 
     public ResponceAction(int statusCode, String message) {
         this.statusCode = statusCode;
         this.message = message;
     }
 
+    public ResponceAction(int statusCode, String message,DTO dto) {
+        this.statusCode = statusCode;
+        this.message = message;
+        this.dto=dto;
+    }
     public ResponceAction(int statusCode) {
         this.statusCode = statusCode;
     }
@@ -45,5 +51,7 @@ public class ResponceAction extends Action implements ResponceCommand {
             serverLogger.info(this.toString());
         }
         }
+
+
 
 }

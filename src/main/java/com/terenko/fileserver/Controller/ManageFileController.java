@@ -3,7 +3,7 @@ package com.terenko.fileserver.Controller;
 import com.dropbox.core.DbxException;
 import com.terenko.fileserver.DTO.FileDTO;
 import com.terenko.fileserver.Sevice.FileService;
-import com.terenko.fileserver.Sevice.MainService;
+import com.terenko.fileserver.Sevice.MainCatalogService;
 import com.terenko.fileserver.Sevice.UserService;
 import com.terenko.fileserver.model.CustomUser;
 import com.terenko.fileserver.util.command.ResponceAction;
@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 @RestController
 public class ManageFileController {
     @Autowired
-    MainService mSr;
+    MainCatalogService mSr;
     @Autowired
     UserService uSr;
     @Autowired
@@ -46,13 +45,14 @@ public class ManageFileController {
     }
 
     @GetMapping("/download/{fileID}")
-    public FileDTO DownloadFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
+    public  ResponseEntity DownloadFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
-            return fSr.downloadFile(us, fSr.getFileByUuid(us, fileId));
+            return  new ResponceAction(200,"success",fSr.downloadFile(us, fSr.getFileByUuid(us, fileId))).respoce();
+
         } catch (DbxException | IOException | AccessDeniedException e) {
-            return null;
+            return new ResponceAction(400,e.toString()).respoce();
         }
     }
 
@@ -65,13 +65,13 @@ public class ManageFileController {
             return new ResponceAction(200,"success").respoce();
 
         } catch (DbxException | AccessDeniedException|IOException e) {
-            return new ResponceAction(200,e.toString()).respoce();
+            return new ResponceAction(400,e.toString()).respoce();
 
         }
     }
     //REST API example
    /* @DeleteMapping("/delete")
-    public ResponseEntity deleteFile(@RequestBody DropboxAction.Delete delete, BindingResult result) throws Exception {
+    public ResponseEntity deleteFile(@RequestBody Action delete, BindingResult result) throws Exception {
         dropboxService.deleteFile(delete);
 
         DropboxAction.Response response = new DropboxAction.Response(200, "success");

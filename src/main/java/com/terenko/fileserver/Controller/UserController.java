@@ -1,16 +1,20 @@
 package com.terenko.fileserver.Controller;
 
 
-
+import com.terenko.fileserver.Exeption.AlreadyExistExeption;
 import com.terenko.fileserver.Sevice.UserService;
 import com.terenko.fileserver.model.CustomUser;
+import com.terenko.fileserver.util.command.ResponceAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 @RestController("/userManage")
 public class UserController {
@@ -18,22 +22,26 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/newuser")
-    public String update(@RequestParam String login,
-                         @RequestParam String password,
+    public ResponseEntity update(@RequestParam String login,
+                                 @RequestParam String password,
+                                 Model model) {
+        try {
+            if (userService.existsByLogin(login)) {
+                model.addAttribute("exists", true);
+               throw new AlreadyExistExeption();
+            }
 
-                         Model model) {
-        if (userService.existsByLogin(login)) {
-            model.addAttribute("exists", true);
-            return "register";
+            PasswordEncoder encoder= new BCryptPasswordEncoder();
+            String passHash = encoder.encode(password);
+
+            CustomUser dbUser = new CustomUser(login, passHash);
+            userService.addUser(dbUser);
+        } catch (AlreadyExistExeption|IOException e) {
+            return new ResponceAction(400,e.toString()).respoce();
         }
 
-        PasswordEncoder encoder= new BCryptPasswordEncoder();
-        String passHash = encoder.encode(password);
+        return new ResponceAction(200,"success").respoce();
 
-        CustomUser dbUser = new CustomUser(login, passHash);
-        userService.addUser(dbUser);
-
-        return "redirect:/";
     }
     public String unauthorized(Model model){
         return "unauthorized";

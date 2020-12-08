@@ -15,10 +15,9 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
-public class MainService implements ServiceInterface {
+public class MainCatalogService implements CatalogServiceInterface {
 
     @Autowired
     UserRepository userRepository;
@@ -35,8 +34,8 @@ public class MainService implements ServiceInterface {
 
             Catalog newCatalog= new Catalog(catalogName,access,us);
             us.addCatalog((Catalog)newCatalog);
-            new DBAction().setRepository(catalogRepository).execute(newCatalog);
-            new DBAction().setRepository(userRepository).execute(us);
+            new DBAction(newCatalog).setRepository(catalogRepository).execute();
+            new DBAction(us).setRepository(userRepository).execute();
 
 
         } catch (IllegalArgumentException | IOException e) {
@@ -57,8 +56,9 @@ public class MainService implements ServiceInterface {
                   e.printStackTrace();
                 }
             });
-        new DBAction().setRepository(catalogRepository).execute(toDel);
-        new DBAction().setRepository(userRepository).execute(us);
+
+        new DBAction(toDel).setRepository(catalogRepository).execute();
+        new DBAction(us).setRepository(userRepository).execute();
 
 
 
@@ -79,7 +79,7 @@ public class MainService implements ServiceInterface {
     public Catalog getCatalogByUuid(CustomUser us, String uuid) throws AccessDeniedException {
         Catalog catalog=catalogRepository.findByUuid(uuid);
         if(securityService.getAccesssModificatorForCatalog(catalog,us)== AccessModificator.RESTRICTED)
-            throw new AccessDeniedException("user is not creator");
+            throw new AccessDeniedException("user havent access");
         return catalog;
     }
 
@@ -88,6 +88,22 @@ public class MainService implements ServiceInterface {
     public List<Catalog> getCatalogsByUser(CustomUser us) {
 
         return catalogRepository.findAllByCreator(us);
+    }
+
+    @Override
+    public void addAccessToUser(CustomUser creator, CustomUser newAccess, Catalog catalog) throws IOException {
+        if(securityService.getAccesssModificatorForCatalog(catalog,creator)!= AccessModificator.CREATOR)
+            throw new AccessDeniedException("user is not creator");
+        catalog.addAccess(newAccess);
+        new DBAction(catalog).setRepository(catalogRepository).execute();
+    }
+
+    @Override
+    public void removeAccess(CustomUser creator, CustomUser delAccess, Catalog catalog) throws IOException {
+        if(securityService.getAccesssModificatorForCatalog(catalog,creator)!= AccessModificator.CREATOR)
+            throw new AccessDeniedException("user is not creator");
+        catalog.removeAccess(delAccess);
+        new DBAction(catalog).setRepository(catalogRepository).execute();
     }
 
 }

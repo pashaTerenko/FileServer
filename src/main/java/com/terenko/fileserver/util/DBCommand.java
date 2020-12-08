@@ -14,6 +14,6 @@ import java.util.logging.Logger;
 import java.io.IOException;
 
 public interface DBCommand {
-     void execute(ModelDB db) throws IOException;
+     void execute() throws IOException;
      DBCommand setRepository(JpaRepository repository);
 }

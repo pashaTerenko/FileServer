@@ -1,26 +1,23 @@
 package com.terenko.fileserver.DTO;
 
-public class AccountDTO {
+import com.terenko.fileserver.model.CustomUser;
+import lombok.Data;
 
-    private final String name;
+@Data
+public class AccountDTO implements DTO{
+
+    private final String login;
+    private final String uuid;
     private final String pictureUrl;
 
-    private AccountDTO(String name, String pictureUrl) {
-
-        this.name = name;
+    public AccountDTO(String name, String uuid, String pictureUrl) {
+        this.login = name;
+        this.uuid = uuid;
         this.pictureUrl = pictureUrl;
     }
+    public static AccountDTO  toDto(CustomUser us){
+       return new AccountDTO(us.getLogin(),us.getUuid(), us.getPicUrl());
 
-  /*  public static AccountDTO of(String email, String name, String pictureUrl) {
-        return new AccountDTO( name,);
-    }*/
-
-
-    public String getName() {
-        return name;
     }
 
-    public String getPictureUrl() {
-        return pictureUrl;
-    }
 }

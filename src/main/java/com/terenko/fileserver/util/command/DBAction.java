@@ -17,19 +17,23 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.Date;
 
-@Component
+
 public class DBAction extends Action implements DBCommand {
 
 JpaRepository repository;
+    ModelDB model;
 
+    public DBAction(ModelDB model) {
+        this.model = model;
+    }
 
     @Override
-    public  void execute(ModelDB t) throws IOException {
+    public  void execute() throws IOException {
         try {
             time = new Date();
             time.getTime();
-            serverLogger.info("Entity:"+t.getClass().getName()+" with uuid:"+t.getUuid()+" perform command: "+this.toString());
-            repository.save(t);
+            serverLogger.info("Entity:"+model.getClass().getName()+" with uuid:"+model.getUuid()+" perform command: "+this.toString());
+            repository.save(model);
         } catch (Exception e) {
             exeptionMessage = e.toString();
             throw e;

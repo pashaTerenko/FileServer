@@ -5,18 +5,19 @@ import com.terenko.fileserver.model.File;
 import lombok.Data;
 
 @Data
-public class FileInfo {
+public class FileInfo implements DTO{
     String uuid;
     String name;
     String exetension;
-    Catalog catalog;
+    String catalogUuid;
     public FileInfo(){
 
     }
     public static FileInfo toDto(File file){
         FileInfo newDTO=new  FileInfo();
         newDTO.setName(file.getName());
-        newDTO.setCatalog(file.getCatalog());
+        newDTO.setUuid(file.getUuid());
+        newDTO.setCatalogUuid(file.getCatalog().getUuid());
         return newDTO;
     }
 }

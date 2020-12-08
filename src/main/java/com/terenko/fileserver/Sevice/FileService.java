@@ -11,14 +11,12 @@ import com.terenko.fileserver.model.Catalog;
 import com.terenko.fileserver.model.CustomUser;
 import com.terenko.fileserver.model.File;
 import com.terenko.fileserver.util.command.*;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 @Service
 public class FileService implements FileServiceInterface {
@@ -45,9 +43,9 @@ public class FileService implements FileServiceInterface {
             DropboxCommand uploadAction=new UploadAction(file.getPath(),filedto.getData());
             uploadAction.execute(dropBoxService);
 
-            new DBAction().setRepository(fileRepository).execute(file);
-            new DBAction().setRepository(catalogRepository).execute(catalog);
-            new DBAction().setRepository(userRepository).execute(us);
+            new DBAction(file).setRepository(fileRepository).execute();
+            new DBAction(catalog).setRepository(catalogRepository).execute();
+            new DBAction(us).setRepository(userRepository).execute();
         } catch (AccessDeniedException | DbxException | IOException e) {
             throw e;
         } catch (Exception e) {
@@ -95,9 +93,9 @@ public class FileService implements FileServiceInterface {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            new DBAction().setRepository(fileRepository).execute(file);
-            new DBAction().setRepository(catalogRepository).execute(catalog);
-            new DBAction().setRepository(userRepository).execute(us);
+            new DBAction(file).setRepository(fileRepository).execute();
+            new DBAction(catalog).setRepository(catalogRepository).execute();
+            new DBAction(us).setRepository(userRepository).execute();
         } catch (DbxException | IOException e) {
             e.printStackTrace();
             throw e;

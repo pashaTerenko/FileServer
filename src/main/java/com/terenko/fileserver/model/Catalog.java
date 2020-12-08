@@ -6,7 +6,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -25,7 +27,7 @@ public class Catalog implements ModelDB{
     @OneToMany(mappedBy = "catalog")
     private List<File> fileList=new ArrayList<>();
     @ElementCollection(fetch = FetchType.LAZY)
-   List<CustomUser> haveAccess;
+    Set<CustomUser> haveAccess=new HashSet<>();
 
     public Catalog(String name, boolean access, CustomUser us) {
 
