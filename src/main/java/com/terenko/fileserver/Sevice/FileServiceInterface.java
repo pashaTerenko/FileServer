@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface FileServiceInterface {
     void  addFileToCatalog(CustomUser us, Catalog catalog, FileDTO filedto)throws AccessDeniedException, DbxException, IOException;
-    void  deleteFile(CustomUser us,File file) throws DbxException, IOException
+    void  deleteFile(CustomUser us,File file) throws DbxException, IOException;
 
     File  getFileByName(CustomUser us,String name);
     File  getFileByUuid(CustomUser us,String uuid);
