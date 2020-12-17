@@ -7,11 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Date;
 
-/**
- * Spring Security wrapper for class {@link com.terenko.fileserver.model.CustomUser}.
- *
 
- */
 
 public class JwtUser implements UserDetails {
 
