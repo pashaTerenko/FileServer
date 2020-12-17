@@ -13,12 +13,7 @@ import java.util.Set;
 @Entity
 @Data
 
-public class Catalog implements ModelDB{
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-
-    private String uuid;
+public class Catalog extends BaseEntity {
     private String name;
     private AccessMode accessMode;
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

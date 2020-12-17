@@ -43,26 +43,5 @@ public class FileserverApplication {
         return client;
     }
 
-    @Bean("serverLogger")
-    public Logger ServerLogger() {
 
-        Logger logger = Logger.getLogger("File Server Log");
-        FileHandler fh;
-
-        try {
-
-
-            fh = new FileHandler(new File(".").getCanonicalPath() + File.separator + "logs.log");
-            logger.addHandler(fh);
-            SimpleFormatter formatter = new SimpleFormatter();
-            fh.setFormatter(formatter);
-            return logger;
-
-
-        } catch (SecurityException|IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-
-    }
 }

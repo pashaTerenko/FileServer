@@ -9,12 +9,8 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class File implements ModelDB {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+public class File extends BaseEntity {
 
-    private String uuid;
     private String name;
     private String path;
 

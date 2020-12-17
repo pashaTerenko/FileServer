@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import java.util.List;
 
 
-public interface CatalogRepository extends JpaRepository<Catalog,Long> {
+public interface CatalogRepository extends JpaRepository<Catalog,String> {
     Catalog findByUuid(String uuid);
     List<Catalog> findByNameAndCreator(String name,CustomUser customUser);
     List<Catalog> findAllByCreator(CustomUser customUser);

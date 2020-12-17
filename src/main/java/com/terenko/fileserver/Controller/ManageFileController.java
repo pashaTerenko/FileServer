@@ -6,6 +6,7 @@ import com.terenko.fileserver.Sevice.FileService;
 import com.terenko.fileserver.Sevice.MainCatalogService;
 import com.terenko.fileserver.Sevice.UserService;
 import com.terenko.fileserver.model.CustomUser;
+import com.terenko.fileserver.security.jwt.JwtUser;
 import com.terenko.fileserver.util.command.ResponceAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class ManageFileController {
 
     @PostMapping("/addFile/{catalogID}")
     public ResponseEntity addFile(@RequestParam("file") MultipartFile file, @PathVariable(value = "catalogID") String toCatalogId) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         CustomUser us = uSr.getUserByLogin(user.getUsername());
 
         try {
@@ -46,7 +47,8 @@ public class ManageFileController {
 
     @GetMapping("/download/{fileID}")
     public  ResponseEntity DownloadFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
             return  new ResponceAction(200,"success",fSr.downloadFile(us, fSr.getFileByUuid(us, fileId))).respoce();
@@ -58,7 +60,7 @@ public class ManageFileController {
 
     @PostMapping("/delete/{fileID}")
     public ResponseEntity DeleteFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
             fSr.deleteFile(us, fSr.getFileByUuid(us, fileId));

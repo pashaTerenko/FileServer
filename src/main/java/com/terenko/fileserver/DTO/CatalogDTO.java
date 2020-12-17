@@ -6,6 +6,8 @@ import com.terenko.fileserver.model.File;
 import com.terenko.fileserver.util.AccessMode;
 import lombok.Data;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Set;
 public class CatalogDTO implements DTO {
     private String uuid;
     private String name;
+    @Enumerated(EnumType.STRING)
     private AccessMode accessMode;
     private AccountDTO creator;
     private List<FileInfo> fileList;

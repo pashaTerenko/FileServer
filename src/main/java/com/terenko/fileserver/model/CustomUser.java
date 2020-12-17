@@ -1,36 +1,38 @@
 package com.terenko.fileserver.model;
 
 import com.terenko.fileserver.DTO.AccountDTO;
+import com.terenko.fileserver.util.Status;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 @Entity
 @Data
 
-public class CustomUser implements ModelDB {
-
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-
-    private String uuid;
+public class CustomUser  extends BaseEntity {
+@Column(unique =true)
     private String login;
     private String password;
     private String picUrl;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "creator")
     private Set<Catalog> catalogs;
 
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_roles",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "uuid")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "uuid")})
+    private Set<Role> roles=new HashSet<>();
     public CustomUser(String login, String password) {
 
 
         this.login = login;
         this.password = password;
+        super.setStatus(Status.NOT_ACTIVE);
+
+
     }
 
     public CustomUser() {
@@ -76,5 +78,10 @@ public class CustomUser implements ModelDB {
     @Override
     public int hashCode() {
         return Objects.hash(uuid, login);
+    }
+    public  void addRole(Role role){
+        role.getUsers().add(this);
+        roles.add(role);
+
     }
 }
