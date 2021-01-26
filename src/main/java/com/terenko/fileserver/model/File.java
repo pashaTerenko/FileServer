@@ -13,7 +13,7 @@ public class File extends BaseEntity {
 
     private String name;
     private String path;
-
+    private boolean isEncrypt=false;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="catalogId")
     private Catalog catalog;

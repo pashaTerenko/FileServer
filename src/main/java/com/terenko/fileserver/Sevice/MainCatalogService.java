@@ -9,6 +9,7 @@ import com.terenko.fileserver.util.AccessModificator;
 
 import com.terenko.fileserver.util.command.DBAction;
 
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +20,27 @@ import java.util.List;
 @Service
 public class MainCatalogService implements CatalogServiceInterface {
 
-    @Autowired
+    final
     UserRepository userRepository;
-    @Autowired
+    final
     FileService fileService;
-    @Autowired
+    final
     CatalogRepository catalogRepository;
-    @Autowired
+    final
     SecurityService securityService;
-    @Override
-    public void addCatalog(CustomUser us, String catalogName,boolean access) throws IllegalArgumentException, IOException {
 
-        try {
+    public MainCatalogService(UserRepository userRepository, FileService fileService, CatalogRepository catalogRepository, SecurityService securityService) {
+        this.userRepository = userRepository;
+        this.fileService = fileService;
+        this.catalogRepository = catalogRepository;
+        this.securityService = securityService;
+    }
+
+    @Override
+    @SneakyThrows
+    public void addCatalog(CustomUser us, String catalogName,boolean access)  {
+
+
 
             Catalog newCatalog= new Catalog(catalogName,access,us);
             us.addCatalog((Catalog)newCatalog);
@@ -38,23 +48,20 @@ public class MainCatalogService implements CatalogServiceInterface {
             new DBAction(us).setRepository(userRepository).execute();
 
 
-        } catch (IllegalArgumentException | IOException e) {
-           throw  e;
-        }
+
 
     }
 
     @Override
-    public void deleteCatalog(CustomUser us,Catalog toDel) throws IOException {
+    @SneakyThrows
+    public void deleteCatalog(CustomUser us,Catalog toDel) {
 
         if(securityService.getAccesssModificatorForCatalog(toDel,us)!= AccessModificator.CREATOR)
             throw new AccessDeniedException("user is not creator");
             fileService.getFilesFromCatalog(us,toDel).forEach(x-> {
-                try {
+
                     fileService.deleteFile(us,x);
-                } catch (DbxException | IOException e) {
-                  e.printStackTrace();
-                }
+
             });
 
         new DBAction(toDel).setRepository(catalogRepository).execute();
@@ -76,7 +83,8 @@ public class MainCatalogService implements CatalogServiceInterface {
     }
 
     @Override
-    public Catalog getCatalogByUuid(CustomUser us, String uuid) throws AccessDeniedException {
+    @SneakyThrows
+    public Catalog getCatalogByUuid(CustomUser us, String uuid)  {
         Catalog catalog=catalogRepository.findByUuid(uuid);
         if(securityService.getAccesssModificatorForCatalog(catalog,us)== AccessModificator.RESTRICTED)
             throw new AccessDeniedException("user havent access");
@@ -91,7 +99,8 @@ public class MainCatalogService implements CatalogServiceInterface {
     }
 
     @Override
-    public void addAccessToUser(CustomUser creator, CustomUser newAccess, Catalog catalog) throws IOException {
+    @SneakyThrows
+    public void addAccessToUser(CustomUser creator, CustomUser newAccess, Catalog catalog)  {
         if(securityService.getAccesssModificatorForCatalog(catalog,creator)!= AccessModificator.CREATOR)
             throw new AccessDeniedException("user is not creator");
         catalog.addAccess(newAccess);
@@ -99,7 +108,8 @@ public class MainCatalogService implements CatalogServiceInterface {
     }
 
     @Override
-    public void removeAccess(CustomUser creator, CustomUser delAccess, Catalog catalog) throws IOException {
+    @SneakyThrows
+    public void removeAccess(CustomUser creator, CustomUser delAccess, Catalog catalog)  {
         if(securityService.getAccesssModificatorForCatalog(catalog,creator)!= AccessModificator.CREATOR)
             throw new AccessDeniedException("user is not creator");
         catalog.removeAccess(delAccess);

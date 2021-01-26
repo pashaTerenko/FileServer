@@ -28,7 +28,7 @@ public class ManageFileController {
     FileService fSr;
 
     @PostMapping("/addFile/{catalogID}")
-    public ResponseEntity addFile(@RequestParam("file") MultipartFile file, @PathVariable(value = "catalogID") String toCatalogId) {
+    public ResponseEntity addFile(@RequestParam("file") MultipartFile file, @PathVariable(value = "catalogID") String toCatalogId ,@RequestParam(required = false) boolean isEncrypt,@RequestParam(required = false) String key) {
         JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         CustomUser us = uSr.getUserByLogin(user.getUsername());
 
@@ -36,37 +36,44 @@ public class ManageFileController {
             FileDTO newFile = new FileDTO();
             newFile.setName(file.getOriginalFilename());
             newFile.setData(file.getBytes());
+            if(isEncrypt&&key!=null)
+                fSr.addFileToCatalogWithEncryption(us, mSr.getCatalogByUuid(us, toCatalogId), newFile,key);
+            else
             fSr.addFileToCatalog(us, mSr.getCatalogByUuid(us, toCatalogId), newFile);
             return new ResponceAction(200,"success").respoce();
-        } catch (IOException | DbxException | AccessDeniedException e) {
+        } catch (IOException  | AccessDeniedException e) {
 
             return new ResponceAction(400,e.toString()).respoce();
         }
 
     }
 
-    @GetMapping("/download/{fileID}")
-    public  ResponseEntity DownloadFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
+    @GetMapping("/download/{CatalogID}/{fileID}")
+    public  ResponseEntity DownloadFile( @PathVariable(value = "CatalogID") String catalogId, @PathVariable(value = "fileID") String fileId,@RequestParam(required = false) String key) {
         JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
+            if(key!=null)
+                return  new ResponceAction(200,"success",fSr.downloadFileWithDecryption(us, fSr.getFileByUuid(us, fileId),key)).respoce();
+
+            else
             return  new ResponceAction(200,"success",fSr.downloadFile(us, fSr.getFileByUuid(us, fileId))).respoce();
 
-        } catch (DbxException | IOException | AccessDeniedException e) {
+        } catch ( AccessDeniedException e) {
             return new ResponceAction(400,e.toString()).respoce();
         }
     }
 
-    @PostMapping("/delete/{fileID}")
-    public ResponseEntity DeleteFile(String catalogId, @PathVariable(value = "fileID") String fileId) {
+    @PostMapping("/delete/{CatalogID}/{fileID}")
+    public ResponseEntity DeleteFile(@PathVariable(value = "CatalogID") String catalogId, @PathVariable(value = "fileID") String fileId) {
         JwtUser user = (JwtUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         CustomUser us = uSr.getUserByLogin(user.getUsername());
         try {
             fSr.deleteFile(us, fSr.getFileByUuid(us, fileId));
             return new ResponceAction(200,"success").respoce();
 
-        } catch (DbxException | AccessDeniedException|IOException e) {
+        } catch (  AccessDeniedException e) {
             return new ResponceAction(400,e.toString()).respoce();
 
         }

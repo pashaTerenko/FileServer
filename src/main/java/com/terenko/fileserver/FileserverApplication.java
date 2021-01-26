@@ -37,7 +37,7 @@ public class FileserverApplication {
 
     @Bean("dropboxClient")
     public DbxClientV2 dropboxClient() throws DbxException {
-        String ACCESS_TOKEN = "klNzdkiaDUEAAAAAAAAAAcTk2bsQyvTtrY-RQG4VGTqexbRZSSxbP4XwtPgMSbM0";
+        String ACCESS_TOKEN = "vbeOu_vGGCoAAAAAAAAAARxLkcdFpyYiKDl3GMRmeRCzewjndC1zBN7p1qAitldZ";
         DbxRequestConfig config = new DbxRequestConfig("dropbox/FileStorageTerenko");
         DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
         return client;

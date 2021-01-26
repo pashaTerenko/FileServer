@@ -16,13 +16,10 @@ import java.util.logging.Logger;
 
 public class DownloadAction extends Action implements DropboxCommand {
     private String filePath;
-
     private byte[] result;
-
     public DownloadAction(String filePath) {
         this.filePath = filePath;
     }
-
     @Override
     public void execute(DropBoxService dropBoxService ) throws IOException, DbxException {
         this.filePath = filePath;

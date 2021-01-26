@@ -5,6 +5,7 @@ import com.terenko.fileserver.Sevice.DropBoxService;
 import com.terenko.fileserver.util.Action;
 import com.terenko.fileserver.util.DropboxCommand;
 import lombok.Data;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.util.Date;
@@ -18,7 +19,8 @@ public class DeleteAction  extends Action implements DropboxCommand {
         this.filePath = filePath;
     }
   @Override
-    public void execute(DropBoxService dropBoxService ) throws IOException, DbxException {
+
+    public void execute(DropBoxService dropBoxService )  {
 
         time = new Date();
         time.getTime();
@@ -27,7 +29,7 @@ public class DeleteAction  extends Action implements DropboxCommand {
 
         } catch (DbxException e) {
             exeptionMessage = e.toString();
-            throw e;
+
         } finally {
             serverLogger.info(this.toString());
         }

@@ -51,7 +51,4 @@ public class ResponceAction extends Action implements ResponceCommand {
             serverLogger.info(this.toString());
         }
         }
-
-
-
 }

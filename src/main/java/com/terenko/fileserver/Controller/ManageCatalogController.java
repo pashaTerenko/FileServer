@@ -27,7 +27,7 @@ public class ManageCatalogController {
         CustomUser us=uSR.getUserByLogin(user.getUsername());
         try {
             mSr.addCatalog(us,name,access);
-        } catch (IllegalArgumentException | IOException e) {
+        } catch (IllegalArgumentException  e) {
             return new ResponceAction(400,e.toString()).respoce();
         }
         return new ResponceAction(200,"success").respoce();
@@ -38,7 +38,7 @@ public class ManageCatalogController {
         CustomUser us=uSR.getUserByLogin(user.getUsername());
         try {
             mSr.deleteCatalog(us,mSr.getCatalogByUuid(us,uuid));
-        } catch (IllegalArgumentException |IOException e) {
+        } catch (IllegalArgumentException  e) {
             return new ResponceAction(400,e.toString()).respoce();
         }
         return new ResponceAction(200,"success").respoce();
@@ -50,7 +50,7 @@ public ResponseEntity getCatalog( @PathVariable(value = "catalogId") String uuid
     try {
         return new ResponceAction(200,"success", CatalogDTO.toDto(mSr.getCatalogByUuid(us,uuid)) ).respoce();
 
-    } catch (IllegalArgumentException |IOException e) {
+    } catch (IllegalArgumentException  e) {
         return new ResponceAction(400,e.toString()).respoce();
     }
 
@@ -62,7 +62,7 @@ public ResponseEntity getCatalog( @PathVariable(value = "catalogId") String uuid
     try {
         mSr.addAccessToUser(us,uSR.getUserByUuid(addAccessTo),mSr.getCatalogByUuid(us,uuid));
 
-    } catch (IllegalArgumentException |IOException e) {
+    } catch (IllegalArgumentException  e) {
         return new ResponceAction(400,e.toString()).respoce();
     }
          return new ResponceAction(200,"success").respoce();
@@ -75,7 +75,7 @@ public ResponseEntity getCatalog( @PathVariable(value = "catalogId") String uuid
         try {
             mSr.removeAccess(us,uSR.getUserByUuid(removeAccessFrom),mSr.getCatalogByUuid(us,uuid));
 
-        } catch (IllegalArgumentException |IOException e) {
+        } catch (IllegalArgumentException  e) {
             return new ResponceAction(400,e.toString()).respoce();
         }
         return new ResponceAction(200,"success").respoce();

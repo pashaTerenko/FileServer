@@ -5,6 +5,7 @@ import com.terenko.fileserver.Sevice.DropBoxService;
 import com.terenko.fileserver.util.Action;
 import com.terenko.fileserver.util.DropboxCommand;
 import lombok.Data;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,21 +20,21 @@ public class UploadAction extends Action implements DropboxCommand {
     private byte[] file;
 
 
-    public UploadAction(String filePath, byte[] file) throws IOException, DbxException {
+    public UploadAction(String filePath, byte[] file) {
         this.filePath = filePath;
         this.file = file;
 
     }
 
 
-    public void execute(DropBoxService dropBoxService ) throws IOException, DbxException {
+    public void execute(DropBoxService dropBoxService ) {
         time = new Date();
         time.getTime();
         try {
             dropBoxService.uploadFile(this);
         } catch (IOException | DbxException e) {
             exeptionMessage = e.toString();
-            throw e;
+
         } finally {
             serverLogger.info(this.toString());
         }
