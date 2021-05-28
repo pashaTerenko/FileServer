@@ -37,3 +37,59 @@
 2021-01-26 18:09:28.847  INFO 14548 --- [http-nio-8081-exec-5] java.lang.Class                          : Action{time=Tue Jan 26 18:09:28 EET 2021, exeptionMessage='null'}
 2021-01-26 18:09:28.850  INFO 14548 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success, dto=null)
 2021-01-26 18:09:28.850  INFO 14548 --- [http-nio-8081-exec-5] java.lang.Class                          : ResponceAction(statusCode=200, message=success, dto=null)
+2021-02-26 14:44:07.005  INFO 1336 --- [main] c.t.fileserver.FileserverApplication     : Starting FileserverApplication on WIN-K93OM2IS26K with PID 1336 (C:\Users\Teren\IdeaProjects\FileServer\target\classes started by Teren in C:\Users\Teren\IdeaProjects\FileServer)
+2021-02-26 14:44:07.007  INFO 1336 --- [main] c.t.fileserver.FileserverApplication     : No active profile set, falling back to default profiles: default
+2021-02-26 14:44:07.517  INFO 1336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-02-26 14:44:07.575  INFO 1336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 4 JPA repository interfaces.
+2021-02-26 14:44:07.938  INFO 1336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-02-26 14:44:07.946  INFO 1336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-26 14:44:07.946  INFO 1336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-02-26 14:44:08.033  INFO 1336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-26 14:44:08.033  INFO 1336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 970 ms
+2021-02-26 14:44:08.147  INFO 1336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 14:44:08.153  INFO 1336 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-02-26 14:44:08.189  INFO 1336 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-26 14:44:08.235  INFO 1336 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-02-26 14:44:08.364  INFO 1336 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-02-26 14:44:08.446  INFO 1336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-26 14:44:08.557  INFO 1336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-26 14:44:08.574  INFO 1336 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-02-26 14:44:09.061  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.061  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "catalog" не существует, пропускается
+2021-02-26 14:44:09.061  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.061  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "catalog_have_access" не существует, пропускается
+2021-02-26 14:44:09.062  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.062  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "catalog_have_access" не существует, пропускается
+2021-02-26 14:44:09.062  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.062  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "file" не существует, пропускается
+2021-02-26 14:44:09.063  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.063  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "user_roles" не существует, пропускается
+2021-02-26 14:44:09.063  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.064  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : отношение "user_roles" не существует, пропускается
+2021-02-26 14:44:09.066  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.066  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "catalog" не существует, пропускается
+2021-02-26 14:44:09.067  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.069  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "catalog_have_access" не существует, пропускается
+2021-02-26 14:44:09.069  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.069  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "custom_user" не существует, пропускается
+2021-02-26 14:44:09.070  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.070  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "file" не существует, пропускается
+2021-02-26 14:44:09.070  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.070  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "roles" не существует, пропускается
+2021-02-26 14:44:09.071  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-02-26 14:44:09.071  WARN 1336 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблица "user_roles" не существует, пропускается
+2021-02-26 14:44:09.150  INFO 1336 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-26 14:44:09.154  INFO 1336 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-26 14:44:09.459  WARN 1336 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-26 14:44:09.788  INFO 1336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19ae36f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@ac4915e, org.springframework.security.web.header.HeaderWriterFilter@3a4e524, org.springframework.security.web.authentication.logout.LogoutFilter@44dd0d38, com.terenko.fileserver.security.jwt.JwtTokenFilter@6735f210, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cc2c551, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ccb12d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4567fb2b, org.springframework.security.web.session.SessionManagementFilter@19eea77c, org.springframework.security.web.access.ExceptionTranslationFilter@4df7d9ee, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e68be2]
+2021-02-26 14:44:09.821  INFO 1336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-26 14:44:09.822  INFO 1336 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-02-26 14:44:09.893  INFO 1336 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-02-26 14:44:09.902  INFO 1336 --- [main] c.t.fileserver.FileserverApplication     : Started FileserverApplication in 3.226 seconds (JVM running for 3.734)
+2021-02-26 15:05:28.102  WARN 1336 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m49s213ms991µs300ns).
+2021-02-26 15:06:20.604  INFO 1336 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-26 15:06:20.604  INFO 1336 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-26 15:06:20.609  INFO 1336 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-02-26 15:06:20.641  WARN 1336 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'login' is not present]
+2021-02-26 15:10:49.086  WARN 1336 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'login' is not present]
+2021-02-26 15:13:31.454  WARN 1336 --- [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'login' is not present]
